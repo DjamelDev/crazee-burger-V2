@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const LoginPage = () => {
+const LoginForm = () => {
   // état
   const [prenom, setPrenom] = useState("");
 
@@ -11,12 +11,12 @@ const LoginPage = () => {
     setPrenom("");
   };
 
-  // render (affichage)
+  // affichage
   return (
     <div>
       <h1>Bienvenue chez nous !</h1>
       <br />
-      <h2>Connectez vous</h2>
+      <h2>Connectez-vous</h2>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -31,4 +31,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default LoginForm;
