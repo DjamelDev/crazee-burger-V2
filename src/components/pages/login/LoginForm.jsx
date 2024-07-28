@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const LoginForm = () => {
   // état
@@ -7,8 +8,11 @@ const LoginForm = () => {
   // comportements
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Bonjour ${prenom}`);
     setPrenom("");
+  };
+
+  const handleClick = () => {
+    console.log("OK");
   };
 
   // affichage
@@ -25,7 +29,8 @@ const LoginForm = () => {
           value={prenom}
           onChange={(e) => setPrenom(e.target.value)}
         />
-        <button>Accédez à votre espace</button>
+        <button onClick={handleClick}>Accédez à votre espace</button>
+        <Link to="/order">Vers OrderPage</Link>
       </form>
     </div>
   );
