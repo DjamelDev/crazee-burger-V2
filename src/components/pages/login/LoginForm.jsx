@@ -1,18 +1,16 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
   // état
   const [prenom, setPrenom] = useState("");
+  const navigate = useNavigate();
 
   // comportements
   const handleSubmit = (e) => {
     e.preventDefault();
     setPrenom("");
-  };
-
-  const handleClick = () => {
-    console.log("OK");
+    navigate(`/order/${prenom}`);
   };
 
   // affichage
@@ -29,8 +27,7 @@ const LoginForm = () => {
           value={prenom}
           onChange={(e) => setPrenom(e.target.value)}
         />
-        <button onClick={handleClick}>Accédez à votre espace</button>
-        <Link to="/order">Vers OrderPage</Link>
+        <button>Accédez à votre espace</button>
       </form>
     </div>
   );
